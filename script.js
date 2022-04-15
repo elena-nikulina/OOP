@@ -22,12 +22,13 @@ function DomElement(selector, height, width, bg, fontSize) {
                     width: 100px; height: 100px; fontSize: 12px;
                     text-align: center;
                     `;
-                    div.style.height = DomElement.height;
-                    div.style.width = DomElement.width;
-                    div.style.background = DomElement.bg;
-                    div.style.fontSize = DomElement.fontSize;
+                    div.style.height = this.height;
+                    div.style.width = this.width;
+                    div.style.background = this.bg;
+                    div.style.fontSize = this.fontSize;
                     div.innerHTML = 'Это блок с классом!';
-                    div.classList.add = "'" + selector + "'";
+                    let str_class = selector.substr(1);
+                    div.classList.add = "'" + str_class + "'";
                     body.appendChild(div);
                     break;
             case '#': p = document.createElement('p');
@@ -36,12 +37,13 @@ function DomElement(selector, height, width, bg, fontSize) {
                     width: 100px; height: 100px; fontSize: 12px;
                     text-align: center;
                     `;
-                    p.style.height = DomElement.height;
-                    p.style.width = DomElement.width;
-                    p.style.background = DomElement.bg;
-                    p.style.fontSize = DomElement.fontSize;
+                    p.style.height = this.height;
+                    p.style.width = this.width;
+                    p.style.background = this.bg;
+                    p.style.fontSize = this.fontSize;
                     p.innerHTML = 'Это параграф с id!';
-                    p.id = "'" + selector + "'";
+                    let str_id = selector.substr(1);
+                    p.id = "'" + str_id + "'";
                     body.appendChild(p);
                     break;
             
@@ -52,6 +54,6 @@ function DomElement(selector, height, width, bg, fontSize) {
 
 };
 
-let blockText = new DomElement('#best', 100 + 'px', 100 + 'px', '#ccc', 12 + 'px');
+let blockText = new DomElement('#best', 100 + 'px', 100 + 'px', '#ccc', 18 + 'px');
 blockText.create();
 
